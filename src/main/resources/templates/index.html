@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" th:href="${'css/http_stackpath.bootstrapcdn.com_bootstrap_4.3.1_css_bootstrap.css'}"
+        href="../static/css/http_stackpath.bootstrapcdn.com_bootstrap_4.3.1_css_bootstrap.css">
+  <title>Movie Database</title>
+</head>
+<body style="background-color: #171a1d; color: white">
+<div class="container mt-5" id="container">
+  <h1 class="mb-5 text-center" style="color: #c69500; font-family: Impact, serif">Movie Database</h1>
+  <div class="row">
+
+    <div class="col-lg-3 col-sm-12 mb-3">
+      <label for="search-input">Search by title</label>
+      <input class="form-control bg-dark text-light border-dark" type="text" id="search-input">
+      <label for="category-filter">Categories</label>
+      <div class="card bg-dark" id="category-filter">
+        <div class="card-body">
+          <div id="categories">
+            <!-- Generated categories -->
+          </div>
+          <button class="btn btn-primary mt-3" id="filter-btn">Filter</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-9 col-sm-12">
+      <label for="main-card">Click on movie for more details</label>
+      <div class="card bg-dark text-light" id="main-card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col">Title</div>
+            <div class="col">Year</div>
+            <div class="col">Category</div>
+            <div class="col">Rating</div>
+          </div>
+        </div>
+        <div class="list-group list-group-flush" id="movie-list">
+          <!-- Generated movies -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal fade" id="prompt" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title">Title (Year)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-description">Description
+      </div>
+      <div class="modal-footer" id="modal-rating">Rating</div>
+    </div>
+  </div>
+</div>
+
+<script th:src="'js/http_code.jquery.com_jquery-3.3.1.slim.js'"
+        src="../static/js/http_code.jquery.com_jquery-3.3.1.slim.js"></script>
+<script th:src="'js/http_stackpath.bootstrapcdn.com_bootstrap_4.3.1_js_bootstrap.js'"
+        src="../static/js/http_stackpath.bootstrapcdn.com_bootstrap_4.3.1_js_bootstrap.js"></script>
+<script th:src="'js/app.js'" src="../static/js/app.js"></script>
+</body>
+</html>

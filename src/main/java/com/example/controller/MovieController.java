@@ -25,7 +25,7 @@ public class MovieController {
     }
 
     @GetMapping("")
-    public ResponseEntity<CollectionModel<MovieDTO>> getMovies() {
+    public ResponseEntity<CollectionModel<EntityModel<MovieDTO>>> getMovies() {
         return movieService.getMovies();
     }
 }

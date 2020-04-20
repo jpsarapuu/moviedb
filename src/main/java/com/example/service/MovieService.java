@@ -10,5 +10,5 @@ public interface MovieService {
 
     ResponseEntity<EntityModel<Movie>> getMovie(Long id);
 
-    ResponseEntity<CollectionModel<MovieDTO>> getMovies();
+    ResponseEntity<CollectionModel<EntityModel<MovieDTO>>> getMovies();
 }

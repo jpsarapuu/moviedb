@@ -11,6 +11,7 @@ import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
@@ -36,9 +37,11 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public ResponseEntity<CollectionModel<MovieDTO>> getMovies() {
+    public ResponseEntity<CollectionModel<EntityModel<MovieDTO>>> getMovies() {
 
-        List<MovieDTO> movies = movieRepository.findAllBy();
+        List<EntityModel<MovieDTO>> movies = new ArrayList<>();
+        movieRepository.findAllBy().forEach(movieDTO -> movies.add(new EntityModel<>(movieDTO,
+                    linkTo(methodOn(MovieController.class).getMovie(movieDTO.getId())).withSelfRel())));
 
         return ResponseEntity.ok(new CollectionModel<>(movies,
                 linkTo(methodOn(MovieController.class).getMovies()).withSelfRel()));
