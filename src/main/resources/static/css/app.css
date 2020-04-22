@@ -1,0 +1,33 @@
+* {
+    outline-style: none !important;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    background-color: #171a1d;
+    color: white;
+}
+
+h1 {
+    color: #c69500;
+    font-family: Impact, serif
+}
+
+a {
+    color: #c69500;
+}
+
+a:hover {
+    color: #966500;
+}
+
+.modal-header, .modal-footer {
+    border-color: #171a1d;
+}
+
+.arr {
+    color: #c69500;
+}

@@ -2,7 +2,10 @@ package com.example.model;
 
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 @Getter
@@ -13,12 +16,13 @@ import javax.persistence.*;
 public class Movie {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
     private int year;
     private double rating;
+
+    @Column(length = 1024)
     private String description;
 
     @OneToOne
